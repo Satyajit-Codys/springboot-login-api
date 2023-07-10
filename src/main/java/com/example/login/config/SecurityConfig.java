@@ -58,8 +58,9 @@ public class SecurityConfig {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-
+    	
         http.csrf(csrf -> csrf.disable())
+        	//.cors(Customizer.withDefaults())
                 .authorizeHttpRequests((authorize) ->
                         //authorize.anyRequest().authenticated()
                         authorize.requestMatchers(HttpMethod.GET, "/api/**").permitAll()
@@ -67,8 +68,9 @@ public class SecurityConfig {
                                 .requestMatchers("/api/auth/**").permitAll()
                                 .requestMatchers("/swagger-ui/**").permitAll()
                                 .requestMatchers("/v3/api-docs/**").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/api/auth/register").permitAll()
                                 .anyRequest().authenticated()
-
+                                
                 ).exceptionHandling( exception -> exception
                         .authenticationEntryPoint(authenticationEntryPoint)
                 ).sessionManagement( session -> session

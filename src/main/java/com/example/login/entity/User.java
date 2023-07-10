@@ -55,28 +55,28 @@ public class User {
 		return email;
 	}
 
-	public void setName(Object name2) {
+	public void setName(String name2) {
 		// TODO Auto-generated method stub
-		
+		this.name= name2;
 	}
 
 	public void setPassword(String encode) {
 		// TODO Auto-generated method stub
-		
+		this.password = encode;
 	}
 
-	public void setUsername(Object username2) {
+	public void setUsername(String username2) {
 		// TODO Auto-generated method stub
-		
+		this.username = username2;
 	}
 
-	public void setEmail(Object email2) {
+	public void setEmail(String email2) {
 		// TODO Auto-generated method stub
-		
+		this.email=email2;
 	}
 
 	public void setRoles(Set<Role> roles2) {
 		// TODO Auto-generated method stub
-		
+		this.roles=roles2;
 	}
 }

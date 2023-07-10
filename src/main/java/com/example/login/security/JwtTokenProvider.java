@@ -15,11 +15,11 @@ import java.util.Date;
 @Component
 public class JwtTokenProvider {
 
-    @Value("${app.jwt-secret}")
-    private String jwtSecret;
+    //@Value("${app.jwt-secret}")
+    private String jwtSecret="something";
 
-    @Value("${app-jwt-expiration-milliseconds}")
-    private long jwtExpirationDate;
+    //@Value("${app-jwt-expiration-milliseconds}")
+    private long jwtExpirationDate = 5*60*1000;
 
     // generate JWT token
     public String generateToken(Authentication authentication){
